@@ -1,6 +1,7 @@
 package com.youkeda.application.art.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.youkeda.application.art.member.model.User;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
