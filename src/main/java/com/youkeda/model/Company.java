@@ -1,4 +1,4 @@
-package com.youkeda.application.art.model;
+package com.youkeda.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.annotation.Id;
@@ -9,9 +9,9 @@ import java.time.LocalDateTime;
 public class Company implements Serializable{
 
     @Transient
-    public static final Company DEFAULT = new Company("youkeda","default","default");
+    public static final Company DEFAULT = new Company("5e72e0bfad8bcb7392fbcb79","default","default");
 
-    private static long serialVersionUID;
+    private static long serialVersionUID = -3832577112854328360L;
 
     @Id
     protected String id;

@@ -1,4 +1,4 @@
-package com.youkeda.application.art.model;
+package com.youkeda.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;

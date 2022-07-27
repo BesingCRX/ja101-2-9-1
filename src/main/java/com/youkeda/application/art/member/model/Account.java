@@ -1,14 +1,17 @@
-package com.youkeda.application.art.model;
+package com.youkeda.application.art.member.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.youkeda.application.art.member.model.User;
+import com.youkeda.model.Base;
+import com.youkeda.model.Company;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 
 import java.time.LocalDateTime;
 
-public class Account extends Base<Account>{
+@Document(collection = "accounts", collation = "{locale: 'zh'}")
+public class Account extends Base<Account> {
 
     @Transient
     public static final Company DEFAULT = new Company("youkeda","default","default");
@@ -153,6 +156,9 @@ public class Account extends Base<Account>{
     }
 
     public LocalDateTime getJoinTime() {
+        if (joinTime == null) {
+            return this.getGmtCreated();
+        }
         return joinTime;
     }
 
@@ -174,5 +180,9 @@ public class Account extends Base<Account>{
 
     public void setBan(boolean ban) {
         this.ban = ban;
+    }
+
+    public String getCompanyId() {
+        return companyId;
     }
 }

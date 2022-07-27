@@ -1,13 +1,14 @@
-package com.youkeda.application.art.model;
+package com.youkeda.application.art.member.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.NullSerializer;
+import com.youkeda.model.Base;
 
 import java.sql.Date;
 
-public class User extends Base<User>{
+public class User extends Base<User> {
 
     private static long serialVersionUID;
 
@@ -65,7 +66,7 @@ public class User extends Base<User>{
      * 出生日期
      */
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date brithday;
+    private Date birthday;
 
     @JsonSerialize(using = NullSerializer.class)
     private String pwd;
@@ -174,12 +175,12 @@ public class User extends Base<User>{
         this.status = status;
     }
 
-    public Date getBrithday() {
-        return brithday;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setBrithday(Date brithday) {
-        this.brithday = brithday;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getPwd() {
@@ -205,4 +206,5 @@ public class User extends Base<User>{
     public void setAgreementVersion(String agreementVersion) {
         this.agreementVersion = agreementVersion;
     }
+
 }

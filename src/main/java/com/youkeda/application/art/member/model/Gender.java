@@ -1,4 +1,4 @@
-package com.youkeda.application.art.model;
+package com.youkeda.application.art.member.model;
 
 public enum Gender {
 

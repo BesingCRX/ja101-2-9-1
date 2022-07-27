@@ -1,10 +1,11 @@
-package com.youkeda.application.art.model;
+package com.youkeda.application.art.member.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.youkeda.model.Base;
 
 import java.time.LocalDateTime;
 
-public class AccountProfile extends Base<AccountProfile>{
+public class AccountProfile extends Base<AccountProfile> {
 
     private static long serialVersionUID;
 
