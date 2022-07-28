@@ -6,7 +6,6 @@ import com.youkeda.application.art.member.model.User;
 import com.youkeda.application.art.member.repository.UserRepository;
 import com.youkeda.application.art.member.service.UserService;
 import com.youkeda.application.art.member.util.IDUtils;
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
+import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
 
@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
         if (slot == null) {
             slot = DEFAULT_SLOT;
         }
-        return DigestUtils.md5Hex(slot + "_" + pwd).toUpperCase();
+        return slot+"_"+pwd;
     }
 
     @Override

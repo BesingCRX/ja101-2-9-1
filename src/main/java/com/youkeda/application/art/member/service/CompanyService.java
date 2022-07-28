@@ -44,7 +44,7 @@ public interface CompanyService {
      *
      * @param companyId
      */
-    void delete(String companyId);
+    boolean delete(String companyId);
 
     /**
      * 根据主键 id 查询企业信息

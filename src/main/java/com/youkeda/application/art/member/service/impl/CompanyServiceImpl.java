@@ -7,6 +7,7 @@ import com.youkeda.application.art.member.util.IDUtils;
 import com.youkeda.model.Company;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 import org.apache.commons.lang3.StringUtils;
@@ -88,17 +89,18 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
-    public void delete(String companyId) {
+    public boolean delete(String companyId) {
         if (StringUtils.isEmpty(companyId)) {
-            return;
+            return false;
         }
         Optional<Company> company = companyRepository.findById(companyId);
 
         if (!company.isPresent()) {
-            return;
+            return false;
         }
 
         companyRepository.deleteById(companyId);
+        return true;
     }
 
     @Override

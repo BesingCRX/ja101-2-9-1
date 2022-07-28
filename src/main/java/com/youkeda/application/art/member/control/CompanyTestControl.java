@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @RestController
 @RequestMapping("/test/Company")
-public class CompanyTestService {
+public class CompanyTestControl {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CompanyTestService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CompanyTestControl.class);
 
     @Autowired
     private CompanyService companyService;
@@ -35,11 +34,6 @@ public class CompanyTestService {
         Company addedCompany = companyService.save(company);
 
         return addedCompany;
-    }
-
-    @GetMapping(path = "/get")
-    public Company testGetCompany() {
-        return companyService.get("0");
     }
 
     @GetMapping(path = "/find")
